@@ -8,12 +8,29 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+        <div id="logo" class="menuUp">
+        <h1>MY FLEET MANAGER</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Upload expenses</a></li>
+                <li><a href="/vehicle-stats">Vehicle stats</a></li>
+                <li><a href="/category-stats">Category stats</a></li>
+                {# <li><a href="#">Help</a></li> #}
+            </ul>
+        </nav>
+        </header>
+        <br><br><br>
+        <div class="container container-fluid">
+            {% block body %}
+            {% endblock %}
+        </div>
     </body>
 </html>
+

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}Vehicle Expenses{% endblock %}
+{% block description %}{% endblock %}
+{% block body %}
+{% block content %}
+  <div class="container container-fluid">
+  
+        {{ include('expenses/filter.html.twig') }}
+      
+      <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+              {% for key, v in expenseByVechicleData.vehicle %}
+                <th>{{ key }}</th>
+              {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              {% for key, v in expenseByVechicleData.vehicle %}
+                    <th>{{ v }}</th>
+              {% endfor %}
+            </tr>
+        </tbody> 
+    </table>
+      <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+              {% for label in expenseByVechicleData.labels %}
+                <th>{{ label }}</th>
+              {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+              {% for data in expenseByVechicleData.data %}
+                <tr>
+                  {% for val in data %}
+                        <th>{{ val }}</th>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+        </tbody> 
+    </table>
+  </div>
+{% endblock %}
+{% endblock %}

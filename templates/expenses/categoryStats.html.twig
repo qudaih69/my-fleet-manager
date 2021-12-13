@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Expenses Stats{% endblock %}
+{% block description %}{% endblock %}
+{% block body %}
+{% block content %}
+  <div class="container container-fluid">
+      {{ include('expenses/filter.html.twig') }}
+    <div class="row">
+      <div class="col-lg-8">
+        {{ render_chart(totalExpenseByCategoryChart) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% endblock %}

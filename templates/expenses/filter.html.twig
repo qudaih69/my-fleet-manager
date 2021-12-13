@@ -1,0 +1,25 @@
+      
+      {% if totalExpenses is defined %}
+        <h3>{{totalExpenses}}</h3>
+      {% endif %}
+
+      <div class="filter-form"> 
+      {{ form_start(form, { attr: { 'accept-charset' : 'utf-8' }}) }}
+        <div class="button">
+          {{ form_label(form.showWithTax) }}
+          {{ form_widget(form.showWithTax) }}
+        </div>
+        <div class="button">
+          {{ form_label(form.startDate) }}
+          {{ form_widget(form.startDate) }}
+        </div>
+        <div class="button">
+          {{ form_label(form.endDate) }}
+          {{ form_widget(form.endDate) }}
+        </div>
+        <div class="">
+          {{ form_widget(form.send, {'label': "Filter", 'attr' : { 'class': 'button btn btn-primary' }}) }}
+        </div>
+        {{ form_rest(form) }}
+      {{ form_end(form) }}
+      </div>
